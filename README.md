@@ -3,7 +3,7 @@
 ### Why DynamoDB?
 DynamoDB and CosmosDB are both good NOSQL database providers due to their high availability and scalability. The pricing for both of these databases is similar when performing pricing calculations using the parameters required for this project. However, DynamoDB is a bit cheaper. 
 
-In terms of flexibility when setting the write and read request, DynamoDB trumps CosmosDB. "So if you are writing more than reading then you can scale the writing unit independently. In cosmos DB, you can not scale both of them independently. It has a single Request unit for both read and writes operations."[1](https://medium.com/intive-developers/amazon-dynamo-db-vs-azure-cosmos-db-2343e700fd1)
+In terms of flexibility when setting the write and read request, DynamoDB trumps CosmosDB. "So if you are writing more than reading then you can scale the writing unit independently. In cosmos DB, you can not scale both of them independently. It has a single Request unit for both read and writes operations."[[1]](https://medium.com/intive-developers/amazon-dynamo-db-vs-azure-cosmos-db-2343e700fd1)
 
 ### Architecture Diagram
 ![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/resource_diagram.drawio.png)
