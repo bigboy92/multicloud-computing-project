@@ -1,7 +1,7 @@
 # A Multi-Cloud Application
 
 ### Architecture Diagram
-
+![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/resource_diagram.drawio.png)
 ## Getting Started
 
 This folder contains the scaffolding Terraform code to deploy your project. Once you select the appropriate cloud providers, you will need to research specific Terraform modules for your select service and add those modules to the provided Terraform scaffolding. 
