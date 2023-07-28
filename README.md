@@ -1,10 +1,12 @@
 # A Multi-Cloud Application
 
+### Why DynamoDB?
+DynamoDB and CosmosDB are both good NOSQL database providers due to their high availability and scalability. The pricing for both of these databases is similar when performing pricing calculations using the parameters required for this project. However, DynamoDB is a bit cheaper. 
+
+In terms of flexibility when setting the write and read request, DynamoDB trumps CosmosDB. "So if you are writing more than reading then you can scale the writing unit independently. In cosmos DB, you can not scale both of them independently. It has a single Request unit for both read and writes operations."[1](https://medium.com/intive-developers/amazon-dynamo-db-vs-azure-cosmos-db-2343e700fd1)
+
 ### Architecture Diagram
 ![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/resource_diagram.drawio.png)
-## Getting Started
-
-This folder contains the scaffolding Terraform code to deploy your project. Once you select the appropriate cloud providers, you will need to research specific Terraform modules for your select service and add those modules to the provided Terraform scaffolding. 
 
 ### Resources
 See the documentation here:
@@ -35,7 +37,6 @@ See the documentation here:
         1. Select PowerShell when prompted. Then click Show advanced settings on the next screen
         2. You can leave the resource group selected, but you’ll need to put in a name for the storage account and file share for your console. Name your storage account all lowercase with no dashes or punctuation. And less than 24 characters. Something like tscottocloudcstorage and tscottofileshare. Then click Create. Allow the console to provision. 
     2. Clone your git repo
-
 
 ## Project Instructions
 
