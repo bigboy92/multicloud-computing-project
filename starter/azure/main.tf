@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "udacity" {
-  name     = "Regroup_4gKqrgD_cn"
+  name     = "Regroup_1rUH_o5rtuBpdoexQ"
 }
 
 resource "azurerm_container_group" "udacity" {
@@ -7,7 +7,7 @@ resource "azurerm_container_group" "udacity" {
   location            = data.azurerm_resource_group.udacity.location
   resource_group_name = data.azurerm_resource_group.udacity.name
   ip_address_type     = "Public"
-  dns_name_label      = "udacity-tscotto-azure"
+  dns_name_label      = "udacity-bigboy-azure"
   os_type             = "Linux"
 
   container {
@@ -16,8 +16,8 @@ resource "azurerm_container_group" "udacity" {
     cpu    = "0.5"
     memory = "1.5"
     environment_variables = {
-      "AWS_S3_BUCKET"       = "udacity-tscotto-aws-s3-bucket",
-      "AWS_DYNAMO_INSTANCE" = "udacity-tscotto-aws-dynamodb"
+      "AWS_S3_BUCKET"       = "udacity-bigboy-aws-s3-bucket",
+      "AWS_DYNAMO_INSTANCE" = "udacity-bigboy-aws-dynamodb"
     }
     ports {
       port     = 3000
@@ -30,3 +30,36 @@ resource "azurerm_container_group" "udacity" {
 }
 
 ####### Your Additions Will Start Here ######
+resource "azurerm_storage_account" "udacity" {
+  name                     = "udacity-bigboy-storage-act"
+  resource_group_name      = data.azurerm_resource_group.example.name
+  location                 = data.azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_sql_server" "udacity" {
+  name                         = "udacity-bigboy-sql-server"
+  resource_group_name          = data.azurerm_resource_group.example.name
+  location                     = data.azurerm_resource_group.example.location
+  version                      = "12.0"
+  administrator_login          = "mradministrator"
+  administrator_login_password = "thisIsDog11"
+}
+
+resource "azurerm_service_plan" "udacity" {
+  name                = "udacity-bigboy-service-plan"
+  resource_group_name = data.azurerm_resource_group.example.name
+  location            = data.azurerm_resource_group.example.location
+  sku_name            = "P1v2"
+  os_type             = "Windows"
+}
+
+resource "azurerm_windows_web_app" "udacity" {
+  name                = "udacity-bigboy-web-app"
+  resource_group_name = data.azurerm_resource_group.example.name
+  location            = data.azurerm_service_plan.example.location
+  service_plan_id     = azurerm_service_plan.example.id
+
+  site_config {}
+}
