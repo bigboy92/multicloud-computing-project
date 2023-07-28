@@ -1,5 +1,7 @@
 # A Multi-Cloud Application
 
+### Architecture Diagram
+
 ## Getting Started
 
 This folder contains the scaffolding Terraform code to deploy your project. Once you select the appropriate cloud providers, you will need to research specific Terraform modules for your select service and add those modules to the provided Terraform scaffolding. 
