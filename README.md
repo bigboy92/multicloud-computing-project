@@ -8,6 +8,19 @@ In terms of flexibility when setting the write and read request, DynamoDB trumps
 ### Architecture Diagram
 ![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/resource_diagram.drawio.png)
 
+#### Azure Web App
+![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/web_app_azure)
+
+#### AWS Web App
+![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/web_app_aws)
+
+#### Terraform Destroy AWS
+![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/aws_terraform_destroy)
+
+#### Terraform Destroy Azure
+![Resources diagram](https://raw.githubusercontent.com/bigboy92/multicloud-computing-project/main/screenshots/azure_terraform_destroy)
+
+
 ### Resources
 See the documentation here:
 - For [Azure](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
