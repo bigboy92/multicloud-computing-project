@@ -31,7 +31,7 @@ resource "azurerm_container_group" "udacity" {
 
 ####### Your Additions Will Start Here ######
 resource "azurerm_storage_account" "udacity" {
-  name                     = "udacity-bigboy-storage-act"
+  name                     = "udacitybigboystorage"
   resource_group_name      = data.azurerm_resource_group.udacity.name
   location                 = data.azurerm_resource_group.udacity.location
   account_tier             = "Standard"
@@ -58,7 +58,7 @@ resource "azurerm_service_plan" "udacity" {
 resource "azurerm_windows_web_app" "udacity" {
   name                = "udacity-bigboy-web-app"
   resource_group_name = data.azurerm_resource_group.udacity.name
-  location            = data.azurerm_service_plan.udacity.location
+  location            = azurerm_service_plan.udacity.location
   service_plan_id     = azurerm_service_plan.udacity.id
 
   site_config {}
