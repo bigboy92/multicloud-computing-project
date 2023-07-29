@@ -32,16 +32,16 @@ resource "azurerm_container_group" "udacity" {
 ####### Your Additions Will Start Here ######
 resource "azurerm_storage_account" "udacity" {
   name                     = "udacity-bigboy-storage-act"
-  resource_group_name      = data.azurerm_resource_group.example.name
-  location                 = data.azurerm_resource_group.example.location
+  resource_group_name      = data.azurerm_resource_group.udacity.name
+  location                 = data.azurerm_resource_group.udacity.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 resource "azurerm_sql_server" "udacity" {
   name                         = "udacity-bigboy-sql-server"
-  resource_group_name          = data.azurerm_resource_group.example.name
-  location                     = data.azurerm_resource_group.example.location
+  resource_group_name          = data.azurerm_resource_group.udacity.name
+  location                     = data.azurerm_resource_group.udacity.location
   version                      = "12.0"
   administrator_login          = "mradministrator"
   administrator_login_password = "thisIsDog11"
@@ -49,17 +49,17 @@ resource "azurerm_sql_server" "udacity" {
 
 resource "azurerm_service_plan" "udacity" {
   name                = "udacity-bigboy-service-plan"
-  resource_group_name = data.azurerm_resource_group.example.name
-  location            = data.azurerm_resource_group.example.location
+  resource_group_name = data.azurerm_resource_group.udacity.name
+  location            = data.azurerm_resource_group.udacity.location
   sku_name            = "P1v2"
   os_type             = "Windows"
 }
 
 resource "azurerm_windows_web_app" "udacity" {
   name                = "udacity-bigboy-web-app"
-  resource_group_name = data.azurerm_resource_group.example.name
-  location            = data.azurerm_service_plan.example.location
-  service_plan_id     = azurerm_service_plan.example.id
+  resource_group_name = data.azurerm_resource_group.udacity.name
+  location            = data.azurerm_service_plan.udacity.location
+  service_plan_id     = azurerm_service_plan.udacity.id
 
   site_config {}
 }
